@@ -37,13 +37,15 @@ input[type="text"] {
   background-color: var(--secondary);
   border: none;
 
-  padding: 8px;
+  padding: 8px 12px;
   outline: none;
   caret-color: white;
   color: white;
   font-size: 16px;
 
   border-radius: 8px;
+
+  transition: all 0.2s;
 }
 
 button {
@@ -51,12 +53,20 @@ button {
   background-color: var(--secondary);
   border: none;
   border-radius: 8px;
-  transition: all 0.4s;
+  transition: all 0.2s;
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
 }
 
 button:hover {
   cursor: pointer;
-  filter: brightness(90%);
+  transform: scale(1.06);
+}
+
+button:active {
+  transition: all 0.05s;
+  transform: scale(0.97);
 }
 
 body {
@@ -113,7 +123,11 @@ main {
 
 .skip {
   flex: 0 0 96px;
-  background-color: rgb(250, 116, 116);
+  background-color: rgb(245, 98, 98);
+}
+
+.skip:hover {
+  background-color: rgb(245, 98, 98);
 }
 
 .search {
@@ -121,6 +135,14 @@ main {
   justify-content: center;
   align-items: center;
   flex: 0 1 256px;
+}
+
+.search:hover {
+  transform: scale(1.03);
+}
+
+.search:focus {
+  background-color: rgb(76, 78, 87);
 }
 
 .enter {
