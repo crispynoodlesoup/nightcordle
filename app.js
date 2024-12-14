@@ -6,7 +6,11 @@ function populate() {
   guesses.forEach((text) => {
     const tryBox = document.createElement("div");
     tryBox.className = "try-box";
-    tryBox.innerText = text;
+
+    const p = document.createElement("p");
+    p.innerText = text;
+
+    tryBox.append(p);
     guessesBox.append(tryBox);
   });
 }

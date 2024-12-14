@@ -1,16 +1,31 @@
 :root {
-  --bg1: rgb(18, 19, 24);
-  --soft: rgb(69, 71, 80);
-  --accent: rgb(23, 58, 199);
+  --primary: rgb(18, 19, 24); /*464646*/
+  --secondary: rgb(69, 71, 80);
+  --accent: #1ca5aa;
+  --text-color: white;
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+img {
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 h1 {
@@ -18,12 +33,42 @@ h1 {
 }
 
 body {
-  background-color: var(--bg1);
+  background-color: var(--primary);
+  height: 100vh;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
-  border-bottom: 2px solid var(--soft);
+  padding: 20px 8px;
+  border-bottom: 2px solid var(--secondary);
+}
+
+main {
+  padding: 24px 0;
+  display: grid;
+  justify-content: center;
+}
+
+.guesses {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  width: min(500px, 100vw);
+  padding: 16px;
+}
+
+.try-box {
+  border: 2px solid white;
+  padding: 4px;
+}
+
+.try-box p {
+  height: 24px;
 }
