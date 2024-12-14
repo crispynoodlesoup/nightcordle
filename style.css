@@ -103,7 +103,8 @@ main {
 
 .try-box {
   border: 2px solid white;
-  padding: 4px;
+  padding: 4px 8px;
+  border-radius: 8px;
 }
 
 .try-box p {
