@@ -108,7 +108,8 @@ main {
 }
 
 .try-box p {
-  height: 24px;
+  height: 28px;
+  font-size: 20px;
 }
 
 .control-wrapper {
