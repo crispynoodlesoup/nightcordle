@@ -13,17 +13,19 @@
     </nav>
     <main>
       <div class="guesses"></div>
-      <div class="game-progress">
-        <div class="stage"></div>
-        <div class="song-progress"></div>
-      </div>
       <div class="control-wrapper">
         <div class="controls">
+          <button class="play">Play</button>
           <button class="skip">Skip</button>
-          <input class="search" type="text" placeholder="guess a song here" />
+          <input
+            class="search"
+            type="text"
+            placeholder="Guess a song here..."
+          />
           <button class="enter">Enter</button>
         </div>
       </div>
     </main>
+    <audio class="aud" preload="auto"></audio>
   </body>
 </html>
