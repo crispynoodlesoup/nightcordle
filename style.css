@@ -32,6 +32,33 @@ h1 {
   font-size: 28px;
 }
 
+input[type="text"] {
+  height: 48px;
+  background-color: var(--secondary);
+  border: none;
+
+  padding: 8px;
+  outline: none;
+  caret-color: white;
+  color: white;
+  font-size: 16px;
+
+  border-radius: 8px;
+}
+
+button {
+  height: 48px;
+  background-color: var(--secondary);
+  border: none;
+  border-radius: 8px;
+  transition: all 0.4s;
+}
+
+button:hover {
+  cursor: pointer;
+  filter: brightness(90%);
+}
+
 body {
   background-color: var(--primary);
   height: 100vh;
@@ -52,7 +79,7 @@ nav {
 main {
   padding: 24px 0;
   display: grid;
-  justify-content: center;
+  justify-items: center;
 }
 
 .guesses {
@@ -60,7 +87,7 @@ main {
   flex-direction: column;
   gap: 12px;
   justify-content: center;
-  width: min(500px, 100vw);
+  width: min(512px, 100vw);
   padding: 16px;
 }
 
@@ -71,4 +98,32 @@ main {
 
 .try-box p {
   height: 24px;
+}
+
+.control-wrapper {
+  width: 100vw;
+  padding: 16px;
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.skip {
+  flex: 0 0 96px;
+  background-color: rgb(250, 116, 116);
+}
+
+.search {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 256px;
+}
+
+.enter {
+  flex: 0 0 96px;
+  background-color: rgb(80, 185, 255);
 }
