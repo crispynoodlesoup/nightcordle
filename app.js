@@ -1,6 +1,6 @@
 const guessesBox = document.querySelector(".guesses");
 
-let guesses = ["haha", "oooh", "", "", "bleh", ""];
+let guesses = ["", "", "", "", "", ""];
 
 function populate() {
   guesses.forEach((text) => {
