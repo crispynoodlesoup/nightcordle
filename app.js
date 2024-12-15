@@ -110,13 +110,16 @@ jsmediatags.read(`http://127.0.0.1:5500/bops/(${bopNum}).mp3`, {
   },
 });
 
-const forwardRing = document.querySelector(".forward-ring");
+const rings = document.getElementsByClassName("forward-ring");
+const ringArr = [...rings];
 
-forwardRing.addEventListener("mousedown", () => {
-  forwardRing.className = "forward-ring forward-spin";
-  //idk figure out skipping later
-});
+ringArr.map((ring) => {
+  ring.addEventListener("mousedown", () => {
+    ring.className = "forward-ring forward-spin";
+    //idk figure out skipping later
+  });
 
-forwardRing.addEventListener("animationend", () => {
-  forwardRing.className = "forward-ring";
+  ring.addEventListener("animationend", () => {
+    ring.className = "forward-ring";
+  });
 });

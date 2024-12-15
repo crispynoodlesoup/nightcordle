@@ -138,12 +138,20 @@ main {
   align-self: self-end;
 }
 
-.play {
+.song-controls {
   grid-row: 1/2;
   grid-column: 2/3;
+  display: flex;
+  justify-content: center;
+}
+
+.restart-track {
+  width: 96px;
+}
+
+.play {
   background-color: rgb(148, 221, 64);
   width: 96px;
-  margin: auto;
 }
 
 .duration {
@@ -212,14 +220,13 @@ main {
 }
 
 .forward {
-  height: 100px;
-  width: 100px;
-  position: relative;
+  height: 96px;
+  width: 96px;
 
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  transform: scale(0.48) rotate(-90deg) scaleY(-1);
+  transform: scale(0.48) rotate(-90deg) scaleY(-1) translateX(50%);
 }
 
 .forward > * {
@@ -228,9 +235,6 @@ main {
 }
 
 .forward-ring {
-  height: 100px;
-  width: 100px;
-
   background-color: var(--primary);
   position: relative;
 
@@ -323,4 +327,12 @@ main {
   100% {
     transform: rotate(-360deg);
   }
+}
+
+.flip {
+  transform: scale(-0.48) rotate(90deg) translateX(50%);
+}
+
+.flip label {
+  transform: translateX(2px) rotate(90deg);
 }
