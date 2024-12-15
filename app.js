@@ -31,6 +31,8 @@ const progress = document.querySelector(".song-progress");
 const bopNum = Math.floor(Math.random() * 201) + 1;
 audio1.src = `bops/(${bopNum}).mp3`;
 
+audio1.volume = 0.1;
+
 let playing = false;
 
 // function for animation progress bar
@@ -39,7 +41,7 @@ function progressBarStep(timestamp) {
   if (start === undefined) {
     start = timestamp;
   }
-  const elapsed = (timestamp - start) / 1000;
+  const elapsed = (timestamp - start) / 1000; // in seconds
   const totalTime = 30 / speeds[stage];
   const percentDone = (elapsed / totalTime) * 100;
 
@@ -57,12 +59,11 @@ function progressBarStep(timestamp) {
 
 play.addEventListener("click", () => {
   if (playing === false) {
-    //play music
-    audio1.volume = 0.1;
+    // play music
     audio1.playbackRate = speeds[stage];
     audio1.play();
 
-    //start progress bar animation
+    // start progress bar animation
     requestAnimationFrame(progressBarStep);
   } else {
     audio1.pause();
