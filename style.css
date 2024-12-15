@@ -214,14 +214,17 @@ main {
 .forward {
   height: 100px;
   width: 100px;
-
-  background-color: var(--primary);
   position: relative;
 
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   transform: scale(0.48) rotate(-90deg) scaleY(-1);
+}
+
+.forward > * {
+  grid-row: 1/2;
+  grid-column: 1/2;
 }
 
 .forward-ring {
@@ -234,20 +237,16 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  transition: all 0.15s;
 }
 
-.forward:hover .forward-ring {
-  animation: slight-spinny 0.1s ease-in-out forwards;
+.forward-ring:hover {
+  transform: rotate(-15deg);
   cursor: pointer;
 }
 
-.forward:active .forward-ring {
+.forward-spin {
   animation: spinny 0.3s ease-in-out forwards;
-}
-
-.forward > * {
-  grid-row: 1/2;
-  grid-column: 1/2;
 }
 
 .forward-ring > * {
@@ -317,19 +316,11 @@ main {
   font-size: 48px;
   font-weight: bold;
   z-index: 1;
-}
-
-.forward:hover label {
-  cursor: pointer;
+  pointer-events: none;
 }
 
 @keyframes spinny {
   100% {
     transform: rotate(-360deg);
-  }
-}
-@keyframes slight-spinny {
-  100% {
-    transform: rotate(-15deg);
   }
 }

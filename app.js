@@ -31,6 +31,12 @@ audio1.volume = 0.1;
 
 let playing = false;
 
+audio1.onloadedmetadata = function () {
+  durationLabel.innerText = `
+    0 of ${String((audio1.duration / speeds[stage]).toFixed(1))}
+  `;
+};
+
 // function for animation progress bar
 let start;
 let prevElapsed = 0;
@@ -102,4 +108,15 @@ jsmediatags.read(`http://127.0.0.1:5500/bops/(${bopNum}).mp3`, {
   onError: function (error) {
     console.log(error);
   },
+});
+
+const forwardRing = document.querySelector(".forward-ring");
+
+forwardRing.addEventListener("mousedown", () => {
+  forwardRing.className = "forward-ring forward-spin";
+  //idk figure out skipping later
+});
+
+forwardRing.addEventListener("animationend", () => {
+  forwardRing.className = "forward-ring";
 });
