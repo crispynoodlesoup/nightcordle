@@ -3,6 +3,8 @@
   --secondary: rgb(69, 71, 80);
   --accent: #1ca5aa;
   --text-color: white;
+
+  --progress: -100%;
 }
 
 * {
@@ -148,7 +150,7 @@ main {
 .song-progress::before {
   content: "";
   position: absolute;
-  left: -100%;
+  left: var(--progress);
   top: 0;
   height: 100%;
   width: 100%;

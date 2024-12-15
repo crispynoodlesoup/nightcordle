@@ -15,7 +15,7 @@ guesses.forEach((text) => {
 
 const skip = document.querySelector(".skip");
 
-const speeds = [15, 8, 5, 3, 2, 1];
+const speeds = [10, 5, 3, 2, 1];
 let stage = 0;
 
 skip.addEventListener("click", () => {
@@ -25,17 +25,45 @@ skip.addEventListener("click", () => {
 
 const play = document.querySelector(".play");
 const audio1 = document.querySelector(".aud");
+const progress = document.querySelector(".song-progress");
 
+//determine random song to play
 const bopNum = Math.floor(Math.random() * 201) + 1;
+audio1.src = `bops/(${bopNum}).mp3`;
 
 let playing = false;
 
+// function for animation progress bar
+let start;
+function progressBarStep(timestamp) {
+  if (start === undefined) {
+    start = timestamp;
+  }
+  const elapsed = (timestamp - start) / 1000;
+  const totalTime = 30 / speeds[stage];
+  const percentDone = (elapsed / totalTime) * 100;
+
+  progress.style.setProperty(
+    "--progress",
+    `max(-${100 - percentDone}%, -100%)`
+  );
+
+  if (percentDone <= 100 && playing) {
+    requestAnimationFrame(progressBarStep);
+  } else {
+    start = undefined;
+  }
+}
+
 play.addEventListener("click", () => {
   if (playing === false) {
-    audio1.src = `bops/(${bopNum}).mp3`;
+    //play music
     audio1.volume = 0.1;
     audio1.playbackRate = speeds[stage];
     audio1.play();
+
+    //start progress bar animation
+    requestAnimationFrame(progressBarStep);
   } else {
     audio1.pause();
   }
