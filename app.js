@@ -1,6 +1,6 @@
 const guessesBox = document.querySelector(".guesses");
 
-let guesses = ["", "", "", "", "", ""];
+let guesses = ["", "", "", "", ""];
 
 guesses.forEach((text) => {
   const tryBox = document.createElement("div");
@@ -22,11 +22,11 @@ let stage = 0;
 const play = document.querySelector(".play");
 const audio1 = document.querySelector(".aud");
 const progress = document.querySelector(".song-progress");
+const durationLabel = document.querySelector(".duration");
 
 //determine random song to play
 const bopNum = Math.floor(Math.random() * 201) + 1;
 audio1.src = `bops/(${bopNum}).mp3`;
-
 audio1.volume = 0.1;
 
 let playing = false;
@@ -46,6 +46,10 @@ function progressBarStep(timestamp) {
     "--progress",
     `max(-${100 - percentDone}%, -100%)`
   );
+
+  durationLabel.innerText = `
+    ${String(elapsed.toFixed(1))} of ${String(totalTime.toFixed(1))}
+  `;
 
   if (percentDone <= 100 && playing) {
     requestAnimationFrame(progressBarStep);
