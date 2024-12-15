@@ -16,15 +16,8 @@ guesses.forEach((text) => {
 const skip = document.querySelector(".skip");
 const speedText = document.querySelector(".speed-multiplier");
 
-const speeds = [10, 5, 3, 2, 1];
+const speeds = [16, 8, 4, 2, 1];
 let stage = 0;
-
-skip.addEventListener("click", () => {
-  stage++;
-
-  if (stage >= speeds.length) stage = 0;
-  speedText.innerText = `${speeds[stage]}x`;
-});
 
 const play = document.querySelector(".play");
 const audio1 = document.querySelector(".aud");
@@ -40,12 +33,13 @@ let playing = false;
 
 // function for animation progress bar
 let start;
+let prevElapsed = 0;
 function progressBarStep(timestamp) {
   if (start === undefined) {
     start = timestamp;
   }
-  const elapsed = (timestamp - start) / 1000; // in seconds
-  const totalTime = 30 / speeds[stage];
+  const elapsed = (timestamp - start) / 1000 + prevElapsed; // in seconds
+  const totalTime = audio1.duration / speeds[stage];
   const percentDone = (elapsed / totalTime) * 100;
 
   progress.style.setProperty(
@@ -56,6 +50,7 @@ function progressBarStep(timestamp) {
   if (percentDone <= 100 && playing) {
     requestAnimationFrame(progressBarStep);
   } else {
+    prevElapsed = percentDone <= 100 ? elapsed : 0;
     start = undefined;
   }
 }
@@ -76,6 +71,23 @@ play.addEventListener("click", () => {
 
 audio1.addEventListener("ended", () => {
   playing = false;
+});
+
+skip.addEventListener("click", () => {
+  stage++;
+
+  // to delete on real game
+  if (stage >= speeds.length) stage = 0;
+
+  speedText.innerText = `${speeds[stage]}x`;
+
+  audio1.currentTime = 0;
+  audio1.pause();
+  playing = false;
+
+  prevElapsed = 0;
+  start = undefined;
+  requestAnimationFrame(progressBarStep);
 });
 
 const mutag = window.jsmediatags;
