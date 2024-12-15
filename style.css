@@ -132,6 +132,12 @@ main {
   justify-content: center;
 }
 
+.speed-multiplier {
+  font-family: "SF Distant Galaxy Font";
+  font-size: 32px;
+  padding-top: 21px;
+}
+
 .play {
   grid-row: 1/2;
   grid-column: 2/3;
