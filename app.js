@@ -47,9 +47,9 @@ audio1.addEventListener("ended", () => {
 });
 
 const mutag = window.jsmediatags;
-jsmediatags.read(`bops/(${bopNum}).mp3`, {
+jsmediatags.read(`http://127.0.0.1:5500/bops/(${bopNum}).mp3`, {
   onSuccess: function (tag) {
-    console.log(tag);
+    console.log(`THE SONG IS: ${tag.tags.title} by ${tag.tags.artist}`);
   },
   onError: function (error) {
     console.log(error);
