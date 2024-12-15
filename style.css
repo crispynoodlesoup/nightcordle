@@ -120,7 +120,7 @@ main {
 }
 
 .control-wrapper {
-  width: min(736px, 100vw);
+  width: min(728px, 100vw);
   padding: 16px;
 }
 
@@ -128,14 +128,14 @@ main {
   display: grid;
   grid-template-columns: 96px 1fr 96px;
   grid-template-rows: 48px 16px 48px;
-  gap: 16px;
+  gap: 12px;
   justify-content: center;
 }
 
 .speed-multiplier {
   font-family: "SF Distant Galaxy Font";
   font-size: 32px;
-  padding-top: 21px;
+  align-self: self-end;
 }
 
 .play {
@@ -144,6 +144,14 @@ main {
   background-color: rgb(148, 221, 64);
   width: 96px;
   margin: auto;
+}
+
+.duration {
+  justify-self: right;
+  align-self: self-end;
+
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .song-progress {
