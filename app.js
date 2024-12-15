@@ -14,13 +14,16 @@ guesses.forEach((text) => {
 });
 
 const skip = document.querySelector(".skip");
+const speedText = document.querySelector(".speed-multiplier");
 
 const speeds = [10, 5, 3, 2, 1];
 let stage = 0;
 
 skip.addEventListener("click", () => {
   stage++;
+
   if (stage >= speeds.length) stage = 0;
+  speedText.innerText = `${speeds[stage]}x`;
 });
 
 const play = document.querySelector(".play");
