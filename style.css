@@ -132,7 +132,7 @@ main {
 }
 
 .play:hover {
-  transform: scale(1.012);
+  transform: scale(1.02);
 }
 
 .play:active {
@@ -172,4 +172,12 @@ main {
   grid-column: 3/4;
   grid-row: 2/3;
   background-color: rgb(80, 185, 255);
+}
+
+#youtube-audio {
+  width: 150px;
+  margin: 2em auto;
+  cursor: pointer;
+  cursor: hand;
+  display: none;
 }

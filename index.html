@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Nightcordle</title>
+    <title>Audiolympics</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
     <script src="./app.js" defer></script>
+    <!--     <script src="./youtubePlayer.js" defer></script> -->
   </head>
   <body>
     <nav>
-      <h1>Nightcordle? Speedle? idk</h1>
+      <h1>Audiolympics!</h1>
     </nav>
     <main>
       <div class="guesses"></div>
@@ -26,6 +28,10 @@
         </div>
       </div>
     </main>
-    <audio class="aud" preload="auto"></audio>
+    <audio
+      class="aud"
+      src="https://www.youtube.com/watch?v=qM19eRgOK1Q"
+      preload="auto"
+    ></audio>
   </body>
 </html>

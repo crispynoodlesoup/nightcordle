@@ -15,7 +15,7 @@ guesses.forEach((text) => {
 
 const skip = document.querySelector(".skip");
 
-const speeds = [-1, 10, 5, 4, 3, 2];
+const speeds = [15, 8, 5, 3, 2, 1];
 let stage = 0;
 
 skip.addEventListener("click", () => {
@@ -33,11 +33,25 @@ let playing = false;
 play.addEventListener("click", () => {
   if (playing === false) {
     audio1.src = `bops/(${bopNum}).mp3`;
-    audio1.volume = 0.05;
+    audio1.volume = 0.1;
     audio1.playbackRate = speeds[stage];
     audio1.play();
   } else {
     audio1.pause();
   }
   playing = !playing;
+});
+
+audio1.addEventListener("ended", () => {
+  playing = false;
+});
+
+const mutag = window.jsmediatags;
+jsmediatags.read(`bops/(${bopNum}).mp3`, {
+  onSuccess: function (tag) {
+    console.log(tag);
+  },
+  onError: function (error) {
+    console.log(error);
+  },
 });
