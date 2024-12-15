@@ -120,7 +120,7 @@ main {
 .controls {
   display: grid;
   grid-template-columns: 96px 1fr 96px;
-  grid-template-rows: 48px 48px;
+  grid-template-rows: 48px 16px 48px;
   gap: 16px;
   justify-content: center;
 }
@@ -128,22 +128,38 @@ main {
 .play {
   grid-row: 1/2;
   grid-column: 2/3;
-  background-color: rgb(163, 240, 76);
+  background-color: rgb(148, 221, 64);
+  width: 96px;
+  margin: auto;
 }
 
-.play:hover {
-  transform: scale(1.02);
+.song-progress {
+  grid-row: 2/3;
+  grid-column: 1/4;
+
+  background-color: var(--secondary);
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  position: relative;
 }
 
-.play:active {
-  transition: all 0.05s;
-  transform: scale(0.99);
+.song-progress::before {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  display: block;
 }
 
 .skip {
   background-color: rgb(235, 91, 91);
   grid-column: 1/2;
-  grid-row: 2/3;
+  grid-row: 3/4;
 }
 
 .skip:hover {
@@ -152,7 +168,7 @@ main {
 
 .search {
   grid-column: 2/3;
-  grid-row: 2/3;
+  grid-row: 3/4;
 }
 
 .search:hover {
@@ -170,14 +186,6 @@ main {
 
 .enter {
   grid-column: 3/4;
-  grid-row: 2/3;
+  grid-row: 3/4;
   background-color: rgb(80, 185, 255);
-}
-
-#youtube-audio {
-  width: 150px;
-  margin: 2em auto;
-  cursor: pointer;
-  cursor: hand;
-  display: none;
 }
