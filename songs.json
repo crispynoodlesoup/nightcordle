@@ -1,0 +1,806 @@
+[
+  {
+    "title": "Video Killed the Radio Star",
+    "artist": "Buggles"
+  },
+  {
+    "title": "Peaceful Times",
+    "artist": "Shiro Sagisu"
+  },
+  {
+    "title": "Wonderwall",
+    "artist": "Oasis"
+  },
+  {
+    "title": "Jump In the Line",
+    "artist": "Harry Belafonte"
+  },
+  {
+    "title": "In Da Club",
+    "artist": "50 Cent"
+  },
+  {
+    "title": "Dancing Queen",
+    "artist": "ABBA"
+  },
+  {
+    "title": "1 Thing",
+    "artist": "Amerie"
+  },
+  {
+    "title": "I Want It That Way",
+    "artist": "Backstreet Boys"
+  },
+  {
+    "title": "Mamma Mia",
+    "artist": "Austin Weber"
+  },
+  {
+    "title": "Hey Jude",
+    "artist": "The Beatles"
+  },
+  {
+    "title": "Other Father Song",
+    "artist": "They Might Be Giants"
+  },
+  {
+    "title": "Runaway Baby",
+    "artist": "Bruno Mars"
+  },
+  {
+    "title": "Yesterday",
+    "artist": "The Beatles"
+  },
+  {
+    "title": "Something",
+    "artist": "The Beatles"
+  },
+  {
+    "title": "Oh! Darling",
+    "artist": "The Beatles"
+  },
+  {
+    "title": "You Never Give Me Your Money",
+    "artist": "The Beatles"
+  },
+  {
+    "title": "Forget You",
+    "artist": "Cee Lo Green"
+  },
+  {
+    "title": "The Longest Time",
+    "artist": "Billy Joel"
+  },
+  {
+    "title": "Redbone",
+    "artist": "Childish Gambino"
+  },
+  {
+    "title": "When I Was Your Man",
+    "artist": "Bruno Mars"
+  },
+  {
+    "title": "Here Comes the Sun",
+    "artist": "The Beatles"
+  },
+  {
+    "title": "Stayin' Alive",
+    "artist": "Bee Gees"
+  },
+  {
+    "title": "That's What I Like",
+    "artist": "Bruno Mars"
+  },
+  {
+    "title": "Finesse (Remix)",
+    "artist": "Bruno Mars & Cardi B"
+  },
+  {
+    "title": "Piano Man",
+    "artist": "Billy Joel"
+  },
+  {
+    "title": "V. 3005",
+    "artist": "Childish Gambino"
+  },
+  {
+    "title": "Heart of Glass",
+    "artist": "Blondie"
+  },
+  {
+    "title": "Hooked on a Feeling",
+    "artist": "Björn Skifs & Blåblus"
+  },
+  {
+    "title": "Lo que siento",
+    "artist": "Cuco"
+  },
+  {
+    "title": "fifty fifty English ver. / twin version [ Sped up ]",
+    "artist": "cupid"
+  },
+  {
+    "title": "Kung Fu Fighting",
+    "artist": "Carl Douglas"
+  },
+  {
+    "title": "Wake Up in the Sky",
+    "artist": "Gucci Mane, Bruno Mars & Kodak Black"
+  },
+  {
+    "title": "Strobelite",
+    "artist": "Gorillaz feat. Peven Everett"
+  },
+  {
+    "title": "Linger",
+    "artist": "The Cranberries"
+  },
+  {
+    "title": "Work Out",
+    "artist": "J Cole"
+  },
+  {
+    "title": "My Heart Will Go On (Love Theme from \"Titanic\")",
+    "artist": "Céline Dion"
+  },
+  {
+    "title": "Gypsy Woman (La Da Dee La Da Da) (Basement Boy ''Strip to Bone'' mix)",
+    "artist": "Crystal Waters"
+  },
+  {
+    "title": "Rich Girl",
+    "artist": "Daryl Hall & John Oates"
+  },
+  {
+    "title": "Street Fighter Mas",
+    "artist": "Kamasi Washington"
+  },
+  {
+    "title": "Gold Digger (feat. Jamie Foxx)",
+    "artist": "Kanye West"
+  },
+  {
+    "title": "You Spin Me Round (Like a Record)",
+    "artist": "Dead or Alive"
+  },
+  {
+    "title": "Goodbye Yellow Brick Road",
+    "artist": "Elton John"
+  },
+  {
+    "title": "Mr. Brightside",
+    "artist": "The Killers"
+  },
+  {
+    "title": "Sorry Seems to Be the Hardest Word",
+    "artist": "Elton John"
+  },
+  {
+    "title": "Virtual Insanity",
+    "artist": "Jamiroquai"
+  },
+  {
+    "title": "Maneater",
+    "artist": "Daryl Hall & John Oates"
+  },
+  {
+    "title": "A 1000 Times",
+    "artist": "Hamilton Leithauser + Rostam"
+  },
+  {
+    "title": "Boogie Wonderland",
+    "artist": "Earth, Wind & Fire with The Emotions"
+  },
+  {
+    "title": "Rock Your Body",
+    "artist": "Justin Timberlake"
+  },
+  {
+    "title": "September",
+    "artist": "Earth, Wind & Fire"
+  },
+  {
+    "title": "Flamingo",
+    "artist": "Kero Kero Bonito"
+  },
+  {
+    "title": "Bad Romance",
+    "artist": "Lady Gaga"
+  },
+  {
+    "title": "Image",
+    "artist": "Magdalena Bay"
+  },
+  {
+    "title": "Strangers in the Night",
+    "artist": "Frank Sinatra"
+  },
+  {
+    "title": "That's Life",
+    "artist": "Frank Sinatra"
+  },
+  {
+    "title": "Blame It on the Boogie",
+    "artist": "The Jacksons"
+  },
+  {
+    "title": "My Way",
+    "artist": "Frank Sinatra"
+  },
+  {
+    "title": "Vampire in the Corner",
+    "artist": "Magdalena Bay"
+  },
+  {
+    "title": "The Ballad of Matt & Mica",
+    "artist": "Magdalena Bay"
+  },
+  {
+    "title": "Can't Take My Eyes Off You",
+    "artist": "Frankie Valli"
+  },
+  {
+    "title": "Rude",
+    "artist": "MAGIC!"
+  },
+  {
+    "title": "Alone Again (Naturally)",
+    "artist": "Gilbert O'Sullivan"
+  },
+  {
+    "title": "Uptown Funk",
+    "artist": "Mark Ronson & Bruno Mars"
+  },
+  {
+    "title": "It's a Wrap",
+    "artist": "Mariah Carey"
+  },
+  {
+    "title": "I Want You Back",
+    "artist": "The Jackson 5"
+  },
+  {
+    "title": "Put on Your Sunday Clothes",
+    "artist": "Jerry Herman"
+  },
+  {
+    "title": "Little Dark Age",
+    "artist": "MGMT"
+  },
+  {
+    "title": "Is She Really Going Out With Him?",
+    "artist": "Joe Jackson"
+  },
+  {
+    "title": "Kids",
+    "artist": "MGMT"
+  },
+  {
+    "title": "Take on Me",
+    "artist": "a-ha"
+  },
+  {
+    "title": "Me and Michael",
+    "artist": "MGMT"
+  },
+  {
+    "title": "Suavecito",
+    "artist": "Malo"
+  },
+  {
+    "title": "Mambo No. 5 (a Little Bit of...)",
+    "artist": "Lou Bega"
+  },
+  {
+    "title": "Happy Pills",
+    "artist": "Norah Jones"
+  },
+  {
+    "title": "Down Under",
+    "artist": "Men At Work"
+  },
+  {
+    "title": "Remember the Time",
+    "artist": "Michael Jackson"
+  },
+  {
+    "title": "Dark Red",
+    "artist": "Steve Lacy"
+  },
+  {
+    "title": "just friends",
+    "artist": "potsu"
+  },
+  {
+    "title": "Bad Habit",
+    "artist": "Steve Lacy"
+  },
+  {
+    "title": "You Rock My World",
+    "artist": "Michael Jackson"
+  },
+  {
+    "title": "Misty",
+    "artist": "Lesley Gore"
+  },
+  {
+    "title": "Rock With You",
+    "artist": "Michael Jackson"
+  },
+  {
+    "title": "When You Die",
+    "artist": "MGMT"
+  },
+  {
+    "title": "Wanna Be Startin' Somethin'",
+    "artist": "Michael Jackson"
+  },
+  {
+    "title": "Macarena (River Re-Mix)",
+    "artist": "Los Del Rio"
+  },
+  {
+    "title": "Nobody",
+    "artist": "Mitski"
+  },
+  {
+    "title": "Chicago",
+    "artist": "Michael Jackson"
+  },
+  {
+    "title": "Lady (Hear Me Tonight)",
+    "artist": "Modjo"
+  },
+  {
+    "title": "Break My Stride",
+    "artist": "Matthew Wilder"
+  },
+  {
+    "title": "Still into You",
+    "artist": "Paramore"
+  },
+  {
+    "title": "Who Can It Be Now?",
+    "artist": "Men at Work"
+  },
+  {
+    "title": "Don't Stop 'til You Get Enough",
+    "artist": "Michael Jackson"
+  },
+  {
+    "title": "Bad",
+    "artist": "Michael Jackson"
+  },
+  {
+    "title": "It Wasn't Me",
+    "artist": "Shaggy"
+  },
+  {
+    "title": "Kill Bill",
+    "artist": "SZA"
+  },
+  {
+    "title": "Snooze",
+    "artist": "SZA"
+  },
+  {
+    "title": "Thriller",
+    "artist": "Michael Jackson"
+  },
+  {
+    "title": "Beat It",
+    "artist": "Michael Jackson"
+  },
+  {
+    "title": "Dragonball Durag",
+    "artist": "Thundercat"
+  },
+  {
+    "title": "Them Changes",
+    "artist": "Thundercat"
+  },
+  {
+    "title": "MILLION DOLLAR BABY",
+    "artist": "Tommy Richman"
+  },
+  {
+    "title": "P.Y.T. (Pretty Young Thing)",
+    "artist": "Michael Jackson"
+  },
+  {
+    "title": "Come On, Let's Go",
+    "artist": "Los Lobos"
+  },
+  {
+    "title": "Billie Jean",
+    "artist": "Michael Jackson"
+  },
+  {
+    "title": "OUTTA MY MIND",
+    "artist": "Monsune"
+  },
+  {
+    "title": "Yeah! (feat. Lil Jon & Ludacris)",
+    "artist": "Usher"
+  },
+  {
+    "title": "The Reason",
+    "artist": "Hoobastank"
+  },
+  {
+    "title": "Pumped Up Kicks",
+    "artist": "Foster the People"
+  },
+  {
+    "title": "A Thousand Miles",
+    "artist": "Vanessa Carlton"
+  },
+  {
+    "title": "Hey Ya!",
+    "artist": "OutKast"
+  },
+  {
+    "title": "Every Breath You Take Video",
+    "artist": "The Police"
+  },
+  {
+    "title": "We Belong Together",
+    "artist": "Los Lobos"
+  },
+  {
+    "title": "When Doves Cry",
+    "artist": "Prince and The Revolution"
+  },
+  {
+    "title": "Smooth Criminal",
+    "artist": "Michael Jackson"
+  },
+  {
+    "title": "EARFQUAKE",
+    "artist": "Tyler, The Creator"
+  },
+  {
+    "title": "See You Again (feat. Kali Uchis)",
+    "artist": "Tyler, The Creator"
+  },
+  {
+    "title": "La Bamba",
+    "artist": "Los Lobos"
+  },
+  {
+    "title": "My Boo",
+    "artist": "Usher & Alicia Keys"
+  },
+  {
+    "title": "Sweet Caroline",
+    "artist": "Neil Diamond"
+  },
+  {
+    "title": "Mr Telephone Man",
+    "artist": "New Edition"
+  },
+  {
+    "title": "Viva la Vida",
+    "artist": "Coldplay"
+  },
+  {
+    "title": "Dare",
+    "artist": "Gorillaz"
+  },
+  {
+    "title": "In the Air Tonight",
+    "artist": "Phil Collins"
+  },
+  {
+    "title": "Somebody That I Used to Know (feat. Kimbra)",
+    "artist": "Gotye"
+  },
+  {
+    "title": "Back To Black",
+    "artist": "Amy Winehouse"
+  },
+  {
+    "title": "I Wanna Be Your Lover",
+    "artist": "Prince"
+  },
+  {
+    "title": "Bohemian Rhapsody",
+    "artist": "Queen"
+  },
+  {
+    "title": "잘자요 아가씨 (Prod. 과나)",
+    "artist": "ASMRZ(다나카&닛몰캐쉬)"
+  },
+  {
+    "title": "Can't Feel My Face",
+    "artist": "The Weeknd"
+  },
+  {
+    "title": "She Will Be Loved",
+    "artist": "Maroon 5"
+  },
+  {
+    "title": "Head Over Heels (Dave Bascombe 7\" N.mix)",
+    "artist": "Tears for Fears"
+  },
+  {
+    "title": "Wham Bam",
+    "artist": "Silver"
+  },
+  {
+    "title": "Hold The Line",
+    "artist": "Toto"
+  },
+  {
+    "title": "The Wanderer",
+    "artist": "Dion"
+  },
+  {
+    "title": "Tainted Love",
+    "artist": "Soft Cell"
+  },
+  {
+    "title": "Runaround Sue",
+    "artist": "Dion"
+  },
+  {
+    "title": "Happy Together",
+    "artist": "The Turtles"
+  },
+  {
+    "title": "Starman",
+    "artist": "David Bowie"
+  },
+  {
+    "title": "Don't Stop Me Now",
+    "artist": "Queen"
+  },
+  {
+    "title": "Conga",
+    "artist": "Miami Sound Machine"
+  },
+  {
+    "title": "Everybody Wants to Rule the World",
+    "artist": "Tears for Fears"
+  },
+  {
+    "title": "Lovefool",
+    "artist": "The Cardigans"
+  },
+  {
+    "title": "Escape (The Pina Colada Song)",
+    "artist": "Rupert Holmes"
+  },
+  {
+    "title": "Electric Avenue",
+    "artist": "Eddy Grant"
+  },
+  {
+    "title": "Put Your Head on My Shoulder",
+    "artist": "Paul Anka"
+  },
+  {
+    "title": "From the Start",
+    "artist": "Laufey"
+  },
+  {
+    "title": "Kiss",
+    "artist": "Prince & The Revolution"
+  },
+  {
+    "title": "Let You Break My Heart Again",
+    "artist": "Laufey, Philharmonia Orchestra"
+  },
+  {
+    "title": "Just What I Needed",
+    "artist": "The Cars"
+  },
+  {
+    "title": "Funkytown",
+    "artist": "Lipps, Inc."
+  },
+  {
+    "title": "If I Could Ride a Bike",
+    "artist": "chevy & Park Bird"
+  },
+  {
+    "title": "Bye Bye Bye - From Deadpool and Wolverine Soundtrack",
+    "artist": "*NSYNC"
+  },
+  {
+    "title": "Killer Queen",
+    "artist": "Queen"
+  },
+  {
+    "title": "History Repeating (Knee Length mix)",
+    "artist": "Propellerheads feat. Miss Shirley Bassey"
+  },
+  {
+    "title": "Another One Bites the Dust",
+    "artist": "Queen"
+  },
+  {
+    "title": "Black Beatles (feat. Gucci Mane)",
+    "artist": "Rae Sremmurd"
+  },
+  {
+    "title": "Never Gonna Give You Up",
+    "artist": "Rick Astley"
+  },
+  {
+    "title": "Here With Me",
+    "artist": "d4vd"
+  },
+  {
+    "title": "Jessie's Girl",
+    "artist": "Rick Springfield"
+  },
+  {
+    "title": "Rehab",
+    "artist": "Amy Winehouse"
+  },
+  {
+    "title": "Somebody's Watching Me",
+    "artist": "Rockwell"
+  },
+  {
+    "title": "Scatman (Ski‐Ba‐Bop‐Ba‐Dop‐Bop)",
+    "artist": "Scatman John"
+  },
+  {
+    "title": "Gives You Hell",
+    "artist": "The All-American Rejects"
+  },
+  {
+    "title": "Smile",
+    "artist": "Lily Allen"
+  },
+  {
+    "title": "I Won't Say (I'm In Love) (From \"Hercules\" / Soundtrack Version)",
+    "artist": "Susan Egan, Cheryl Freeman, LaChanze & Vaneese Thomas"
+  },
+  {
+    "title": "To Be Loved",
+    "artist": "Jackie Wilson"
+  },
+  {
+    "title": "Rasputin",
+    "artist": "Boney M."
+  },
+  {
+    "title": "Tequila",
+    "artist": "The Champs"
+  },
+  {
+    "title": "Mr. Blue Sky",
+    "artist": "Electric Light Orchestra"
+  },
+  {
+    "title": "Come and Get Your Love",
+    "artist": "Redbone"
+  },
+  {
+    "title": "American Pie",
+    "artist": "Don McLean"
+  },
+  {
+    "title": "Mr. Sandman",
+    "artist": "The Chordettes"
+  },
+  {
+    "title": "I Will Survive",
+    "artist": "Gloria Gaynor"
+  },
+  {
+    "title": "My Girl",
+    "artist": "The Temptations"
+  },
+  {
+    "title": "Donna",
+    "artist": "Ritchie Valens"
+  },
+  {
+    "title": "Sh-Boom",
+    "artist": "The Chords"
+  },
+  {
+    "title": "Careless Whisper",
+    "artist": "George Michael"
+  },
+  {
+    "title": "War",
+    "artist": "Edwin Starr"
+  },
+  {
+    "title": "Dreadlock Holiday",
+    "artist": "10cc"
+  },
+  {
+    "title": "Changes",
+    "artist": "Butterfly Boucher feat. David Bowie"
+  },
+  {
+    "title": "Ymca",
+    "artist": "Village People"
+  },
+  {
+    "title": "Holding Out for a Hero",
+    "artist": "Bonnie Tyler"
+  },
+  {
+    "title": "It's Raining Men",
+    "artist": "The Weather Girls"
+  },
+  {
+    "title": "Last Christmas",
+    "artist": "Wham!"
+  },
+  {
+    "title": "I Wanna Dance with Somebody (Who Loves Me)",
+    "artist": "Whitney Houston"
+  },
+  {
+    "title": "FLY ME TO THE MOON",
+    "artist": "Claire"
+  },
+  {
+    "title": "Believe",
+    "artist": "Cher"
+  },
+  {
+    "title": "Love",
+    "artist": "Keyshia Cole"
+  },
+  {
+    "title": "Accidentally In Love (From \"Shrek 2\" Soundtrack)",
+    "artist": "Counting Crows"
+  },
+  {
+    "title": "Free Fallin'",
+    "artist": "Tom Petty"
+  },
+  {
+    "title": "Push It Live, Short Version",
+    "artist": "Salt-N-Pepa"
+  },
+  {
+    "title": "The Promise",
+    "artist": "When In Rome"
+  },
+  {
+    "title": "Bennie and the Jets",
+    "artist": "Elton John"
+  },
+  {
+    "title": "PUNK TACTICS",
+    "artist": "Joey Valence & Brae"
+  },
+  {
+    "title": "Enter Sandman (Smooth Jazz Version)",
+    "artist": "Metallica"
+  },
+  {
+    "title": "Beautiful Girls",
+    "artist": "Sean Kingston"
+  },
+  {
+    "title": "Africa",
+    "artist": "Ninja Sex Party"
+  },
+  {
+    "title": "L.O.V.E.",
+    "artist": "Nat King Cole"
+  },
+  {
+    "title": "Drops of Jupiter",
+    "artist": "Train"
+  },
+  {
+    "title": "Smooth",
+    "artist": "Santana"
+  },
+  {
+    "title": "Come On Eileen (1982 Version)",
+    "artist": "Dexys Midnight Runners"
+  }
+]

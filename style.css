@@ -55,6 +55,11 @@ input[type="text"] {
   transition: all 0.2s;
 }
 
+input[type="text"]:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 button {
   height: 48px;
   background-color: var(--secondary);

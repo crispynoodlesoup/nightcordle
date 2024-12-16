@@ -68,6 +68,7 @@ function progressBarStep(timestamp) {
   }
 }
 
+// button events
 play.addEventListener("click", () => {
   if (playing === false) {
     // play music
@@ -132,6 +133,22 @@ ringArr.map((ring) => {
   });
 });
 
+fetch("./songs.json")
+  .then((res) => res.json())
+  .then((data) => enableSearch(data));
+
+let search = document.querySelector(".search");
+
+function enableSearch(data) {
+  search.disabled = false;
+  search.placeholder = "Guess a song here...";
+
+  let songArr = data.map((song) => `${song.artist} - ${song.title}`);
+
+  console.log(songArr);
+}
+
+/* tool for getting mp3 tags from files
 const mutag = window.jsmediatags;
 jsmediatags.read(`http://127.0.0.1:5500/bops/(${bopNum}).mp3`, {
   onSuccess: function (tag) {
@@ -141,3 +158,24 @@ jsmediatags.read(`http://127.0.0.1:5500/bops/(${bopNum}).mp3`, {
     console.log(error);
   },
 });
+
+let songArr = [];
+
+for (let i = 1; i < 202; i++) {
+  jsmediatags.read(`http://127.0.0.1:5500/bops/(${i}).mp3`, {
+    onSuccess: function (tag) {
+      songObj = {
+        title: tag.tags.title,
+        artist: tag.tags.artist,
+      };
+
+      songArr.push(songObj);
+    },
+    onError: function (error) {
+      console.log(error);
+    },
+  });
+}
+
+console.log(songArr);
+ */
