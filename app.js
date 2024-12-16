@@ -22,7 +22,6 @@ let stage = 0;
 const play = document.querySelector(".play");
 const audio1 = document.querySelector(".aud");
 const progress = document.querySelector(".song-progress");
-const durationLabel = document.querySelector(".duration");
 
 //determine random song to play
 const bopNum = Math.floor(Math.random() * 201) + 1;
@@ -31,10 +30,10 @@ audio1.volume = 0.1;
 
 let playing = false;
 
+const durationLabel = document.querySelector(".duration");
 audio1.onloadedmetadata = function () {
-  durationLabel.innerText = `
-    0 of ${String((audio1.duration / speeds[stage]).toFixed(1))}
-  `;
+  const duration = String(Math.floor(audio1.duration)).padStart(2, "0");
+  durationLabel.innerText = `0:${duration}`;
 };
 
 // function for animation progress bar
@@ -55,10 +54,12 @@ function progressBarStep(timestamp) {
     `max(-${100 - percentDone}%, -100%)`
   );
 
-  const currentTime = Math.min(elapsed, totalTime).toFixed(1);
-  durationLabel.innerText = `
-    ${String(currentTime)} of ${String(totalTime.toFixed(1))}
-  `;
+  const currentTime = Math.floor(Math.min(elapsed, totalTime) * speeds[stage]);
+
+  const duration = Math.floor(audio1.duration);
+  durationLabel.innerText = `${String(currentTime).padStart(2, "0")}:${String(
+    duration
+  ).padStart(2, "0")}`;
 
   if (percentDone < 100 && playing) {
     requestAnimationFrame(progressBarStep);
@@ -111,14 +112,14 @@ ringArr.map((ring) => {
 
     if (!ring.classList.contains("back")) {
       // skip time
-      audio1.currentTime = audio1.currentTime + speeds[stage] * 3;
+      audio1.currentTime = audio1.currentTime + 5;
 
       // update animation
       start = undefined;
       requestAnimationFrame(progressBarStep);
     } else {
       // back time
-      audio1.currentTime = audio1.currentTime - speeds[stage] * 3;
+      audio1.currentTime = audio1.currentTime - 5;
 
       // update animation
       start = undefined;
