@@ -55,8 +55,6 @@ function progressBarStep(timestamp) {
     `max(-${100 - percentDone}%, -100%)`
   );
 
-  console.log(`${elapsed} : ${prevElapsed} : ${percentDone}%`);
-
   const currentTime = Math.min(elapsed, totalTime).toFixed(1);
   durationLabel.innerText = `
     ${String(currentTime)} of ${String(totalTime.toFixed(1))}
