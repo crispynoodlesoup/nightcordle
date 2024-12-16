@@ -75,15 +75,19 @@ play.addEventListener("click", () => {
     audio1.playbackRate = speeds[stage];
     audio1.play();
 
+    play.innerText = "Pause";
+
     // start progress bar animation
     requestAnimationFrame(progressBarStep);
   } else {
+    play.innerText = "Play";
     audio1.pause();
   }
   playing = !playing;
 });
 
 audio1.addEventListener("ended", () => {
+  play.innerText = "Play";
   playing = false;
 });
 
@@ -137,28 +141,76 @@ fetch("./songs.json")
   .then((res) => res.json())
   .then((data) => enableSearch(data));
 
+let searchSuggestions = document.querySelector(".search-suggestions");
 let search = document.querySelector(".search input");
+let songArr;
 
 function enableSearch(data) {
   search.disabled = false;
   search.placeholder = "Guess a song here...";
 
-  let songArr = data.map((song) => `${song.artist} - ${song.title}`);
-
-  console.log(songArr);
+  songArr = data.map((song) => `${song.artist} - ${song.title}`);
 }
 
-/* tool for getting mp3 tags from files
+// setup suggestions to fill in input
+function fillSuggestion(e) {
+  search.value = e.target.innerText;
+  searchSuggestions.textContent = "";
+}
+
+// perform search suggestions on type
+search.addEventListener("keyup", () => {
+  let results = [];
+  let input = search.value;
+
+  // search for results with filter
+  if (input.length) {
+    results = songArr.filter((keyword) => {
+      return keyword.toLowerCase().includes(input.toLowerCase());
+    });
+  }
+
+  // clear any previous results
+  searchSuggestions.textContent = "";
+
+  // display first 6 results
+  results = results.slice(0, 6);
+  results.forEach((song) => {
+    const suggestedKeyword = document.createElement("li");
+    suggestedKeyword.innerText = song;
+
+    suggestedKeyword.addEventListener("click", fillSuggestion);
+
+    searchSuggestions.append(suggestedKeyword);
+  });
+});
+
+// get the correct answer
+let correctSong;
+
 const mutag = window.jsmediatags;
 jsmediatags.read(`http://127.0.0.1:5500/bops/(${bopNum}).mp3`, {
   onSuccess: function (tag) {
-    console.log(`THE SONG IS: ${tag.tags.title} by ${tag.tags.artist}`);
+    correctSong = `${tag.tags.artist} - ${tag.tags.title}`;
   },
   onError: function (error) {
     console.log(error);
   },
 });
 
+const enter = document.querySelector(".enter");
+
+enter.addEventListener("click", () => {
+  const guess = search.value;
+  if (guess.localeCompare(correctSong) === 0) {
+    console.log("wow!");
+  } else {
+    console.log("you suck!");
+  }
+  console.log(`${guess} and ${correctSong}`);
+});
+
+/* tool for getting mp3 tags from all mp3 files
 let songArr = [];
 
 for (let i = 1; i < 202; i++) {
