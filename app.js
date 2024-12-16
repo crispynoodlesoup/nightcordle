@@ -43,24 +43,28 @@ let prevElapsed = 0;
 function progressBarStep(timestamp) {
   if (start === undefined) {
     start = timestamp;
+    prevElapsed = audio1.currentTime / speeds[stage];
   }
-  const elapsed = (timestamp - start) / 1000 + prevElapsed; // in seconds
-  const totalTime = audio1.duration / speeds[stage];
-  const percentDone = (elapsed / totalTime) * 100;
 
+  let elapsed = (timestamp - start) / 1000 + prevElapsed; // in seconds
+  const totalTime = audio1.duration / speeds[stage];
+
+  const percentDone = (elapsed / totalTime) * 100;
   progress.style.setProperty(
     "--progress",
     `max(-${100 - percentDone}%, -100%)`
   );
 
+  console.log(`${elapsed} : ${prevElapsed} : ${percentDone}%`);
+
+  const currentTime = Math.min(elapsed, totalTime).toFixed(1);
   durationLabel.innerText = `
-    ${String(elapsed.toFixed(1))} of ${String(totalTime.toFixed(1))}
+    ${String(currentTime)} of ${String(totalTime.toFixed(1))}
   `;
 
-  if (percentDone <= 100 && playing) {
+  if (percentDone < 100 && playing) {
     requestAnimationFrame(progressBarStep);
   } else {
-    prevElapsed = percentDone <= 100 ? elapsed : 0;
     start = undefined;
   }
 }
@@ -95,9 +99,38 @@ skip.addEventListener("click", () => {
   audio1.pause();
   playing = false;
 
-  prevElapsed = 0;
   start = undefined;
   requestAnimationFrame(progressBarStep);
+});
+
+// back and forward animations + implementation
+const rings = document.getElementsByClassName("forward-ring");
+const ringArr = [...rings];
+
+ringArr.map((ring) => {
+  ring.addEventListener("mousedown", () => {
+    ring.classList.add("forward-spin");
+
+    if (!ring.classList.contains("back")) {
+      // skip time
+      audio1.currentTime = audio1.currentTime + speeds[stage] * 3;
+
+      // update animation
+      start = undefined;
+      requestAnimationFrame(progressBarStep);
+    } else {
+      // back time
+      audio1.currentTime = audio1.currentTime - speeds[stage] * 3;
+
+      // update animation
+      start = undefined;
+      requestAnimationFrame(progressBarStep);
+    }
+  });
+
+  ring.addEventListener("animationend", () => {
+    ring.classList.remove("forward-spin");
+  });
 });
 
 const mutag = window.jsmediatags;
@@ -108,18 +141,4 @@ jsmediatags.read(`http://127.0.0.1:5500/bops/(${bopNum}).mp3`, {
   onError: function (error) {
     console.log(error);
   },
-});
-
-const rings = document.getElementsByClassName("forward-ring");
-const ringArr = [...rings];
-
-ringArr.map((ring) => {
-  ring.addEventListener("mousedown", () => {
-    ring.className = "forward-ring forward-spin";
-    //idk figure out skipping later
-  });
-
-  ring.addEventListener("animationend", () => {
-    ring.className = "forward-ring";
-  });
 });
