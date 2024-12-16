@@ -137,7 +137,7 @@ fetch("./songs.json")
   .then((res) => res.json())
   .then((data) => enableSearch(data));
 
-let search = document.querySelector(".search");
+let search = document.querySelector(".search input");
 
 function enableSearch(data) {
   search.disabled = false;

@@ -148,6 +148,7 @@ main {
   grid-column: 2/3;
   display: flex;
   justify-content: center;
+  gap: 16px;
 }
 
 .restart-track {
@@ -201,21 +202,65 @@ main {
 }
 
 .search {
+  position: relative;
   grid-column: 2/3;
   grid-row: 3/4;
+  display: flex;
 }
 
-.search:hover {
-  transform: scale(1.02);
+.search-input {
+  flex: 1 0 auto;
+  z-index: 2;
 }
 
-.search:focus {
-  transform: scale(1);
+.search-input:focus {
   background-color: rgb(76, 78, 87);
 }
 
-.search::placeholder {
+.search-input::placeholder {
   color: rgb(175, 175, 175);
+}
+
+.search-suggestions {
+  position: absolute;
+  top: calc(100% - 8px);
+
+  width: 100%;
+  padding-top: 8px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 48px;
+
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+.search-suggestions li:nth-child(1) {
+  height: calc(100% + 6px);
+  transform: translateY(-2px);
+  padding: 18px 12px 12px;
+  border-bottom: 2px solid rgb(15, 15, 15);
+}
+
+.search-suggestions li {
+  height: 100%;
+  background-color: rgb(39, 37, 37);
+  border-bottom: 1px solid var(--primary);
+
+  position: relative;
+  padding: 12px;
+
+  user-select: none;
+  -webkit-user-drag: none;
+
+  transition: all 0.4s;
+  z-index: 0;
+}
+
+.search-suggestions li:hover {
+  background-color: rgb(53, 55, 59);
+  cursor: pointer;
 }
 
 .enter {
@@ -225,13 +270,16 @@ main {
 }
 
 .forward {
-  height: 96px;
-  width: 96px;
+  height: 48px;
+  width: 48px;
 
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  transform: scale(0.48) rotate(-90deg) scaleY(-1) translateX(50%);
+  justify-content: center;
+  align-content: center;
+
+  transform: scale(0.48) rotate(-90deg) scaleY(-1);
 }
 
 .forward > * {
@@ -241,7 +289,6 @@ main {
 
 .forward-ring {
   background-color: var(--primary);
-  position: relative;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -269,7 +316,7 @@ main {
   overflow: hidden;
   position: relative;
   transform: translate(-50%, -50%);
-  left: 90%;
+  left: 94%;
   bottom: -50%;
 }
 
@@ -335,7 +382,7 @@ main {
 }
 
 .flip {
-  transform: scale(-0.48) rotate(90deg) translateX(50%);
+  transform: scale(-0.48) rotate(90deg);
 }
 
 .flip label {
