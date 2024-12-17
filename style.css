@@ -1,6 +1,7 @@
 :root {
   --primary: rgb(18, 19, 24); /*464646*/
   --secondary: rgb(69, 71, 80);
+  --tertiary: rgb(48, 50, 59);
   --accent: #1ca5aa;
   --text-color: white;
 
@@ -118,12 +119,31 @@ main {
 }
 
 .try-box {
-  border: 2px solid white;
+  background-color: var(--tertiary);
+  /*   border: 2px solid white; */
   padding: 4px 8px;
   border-radius: 8px;
+
+  transition: all 0.4s;
+}
+
+.correct {
+  background-color: rgba(148, 221, 64, 0.9);
+}
+
+.wrong {
+  background-color: rgba(235, 91, 91, 0.9);
+}
+
+.skipped {
+  opacity: 0.4;
 }
 
 .try-box p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   height: 28px;
   font-size: 20px;
 }

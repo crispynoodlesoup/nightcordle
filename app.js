@@ -49,6 +49,42 @@ function progressBarStep(timestamp) {
   }
 }
 
+const guessesBox = document.querySelector(".guesses");
+
+let guesses = ["", "", "", "", "", ""];
+let stage = 0;
+let correctSong;
+
+guesses.forEach((text) => {
+  const tryBox = document.createElement("div");
+  tryBox.className = "try-box";
+
+  const p = document.createElement("p");
+  p.innerText = text;
+
+  tryBox.append(p);
+  guessesBox.append(tryBox);
+});
+
+function updateGuesses(newGuess) {
+  guesses[stage] = newGuess;
+  newGuessBox = guessesBox.children[stage];
+
+  if (newGuess.localeCompare("skip") === 0) {
+    newGuessBox.classList.add("skipped");
+    return;
+  }
+
+  // get p element and update its text with the new guess
+  newGuessBox.children[0].innerText = newGuess;
+
+  if (newGuess.localeCompare(correctSong) === 0) {
+    newGuessBox.classList.add("correct");
+  } else {
+    newGuessBox.classList.add("wrong");
+  }
+}
+
 // button events
 play.addEventListener("click", () => {
   if (playing === false) {
@@ -76,7 +112,6 @@ const skip = document.querySelector(".skip");
 const speedText = document.querySelector(".speed-multiplier");
 
 const speeds = [16, 8, 4, 3, 2, 1];
-let stage = 0;
 
 // go to the next stage,
 function upTheStage() {
@@ -98,6 +133,7 @@ function upTheStage() {
 }
 
 skip.addEventListener("click", () => {
+  updateGuesses("skip");
   upTheStage();
 });
 
@@ -180,8 +216,6 @@ search.addEventListener("keyup", () => {
 });
 
 // get the correct answer
-let correctSong;
-
 const mutag = window.jsmediatags;
 jsmediatags.read(`http://127.0.0.1:5500/bops/(${bopNum}).mp3`, {
   onSuccess: function (tag) {
@@ -197,27 +231,10 @@ const enter = document.querySelector(".enter");
 enter.addEventListener("click", () => {
   const guess = search.value;
   search.value = "";
-  if (guess.localeCompare(correctSong) === 0) {
-    console.log("wow!");
-  } else {
-    upTheStage();
-    console.log("you suck!");
-  }
-});
+  updateGuesses(guess);
 
-const guessesBox = document.querySelector(".guesses");
-
-let guesses = ["", "", "", "", "", ""];
-
-guesses.forEach((text) => {
-  const tryBox = document.createElement("div");
-  tryBox.className = "try-box";
-
-  const p = document.createElement("p");
-  p.innerText = text;
-
-  tryBox.append(p);
-  guessesBox.append(tryBox);
+  //if it's wrong then continue
+  if (guess.localeCompare(correctSong) !== 0) upTheStage();
 });
 
 /* tool for getting mp3 tags from all mp3 files
