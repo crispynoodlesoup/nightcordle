@@ -1,24 +1,3 @@
-const guessesBox = document.querySelector(".guesses");
-
-let guesses = ["", "", "", "", ""];
-
-guesses.forEach((text) => {
-  const tryBox = document.createElement("div");
-  tryBox.className = "try-box";
-
-  const p = document.createElement("p");
-  p.innerText = text;
-
-  tryBox.append(p);
-  guessesBox.append(tryBox);
-});
-
-const skip = document.querySelector(".skip");
-const speedText = document.querySelector(".speed-multiplier");
-
-const speeds = [16, 8, 4, 2, 1];
-let stage = 0;
-
 const play = document.querySelector(".play");
 const audio1 = document.querySelector(".aud");
 const progress = document.querySelector(".song-progress");
@@ -26,6 +5,7 @@ const progress = document.querySelector(".song-progress");
 //determine random song to play
 const bopNum = Math.floor(Math.random() * 201) + 1;
 audio1.src = `bops/(${bopNum}).mp3`;
+
 audio1.volume = 0.1;
 
 let playing = false;
@@ -33,7 +13,7 @@ let playing = false;
 const durationLabel = document.querySelector(".duration");
 audio1.onloadedmetadata = function () {
   const duration = String(Math.floor(audio1.duration)).padStart(2, "0");
-  durationLabel.innerText = `0:${duration}`;
+  durationLabel.innerText = `0:00/0:${duration}`;
 };
 
 // function for animation progress bar
@@ -57,9 +37,10 @@ function progressBarStep(timestamp) {
   const currentTime = Math.floor(Math.min(elapsed, totalTime) * speeds[stage]);
 
   const duration = Math.floor(audio1.duration);
-  durationLabel.innerText = `${String(currentTime).padStart(2, "0")}:${String(
-    duration
-  ).padStart(2, "0")}`;
+  durationLabel.innerText = `0:${String(currentTime).padStart(
+    2,
+    "0"
+  )}/0:${String(duration).padStart(2, "0")}`;
 
   if (percentDone < 100 && playing) {
     requestAnimationFrame(progressBarStep);
@@ -91,7 +72,14 @@ audio1.addEventListener("ended", () => {
   playing = false;
 });
 
-skip.addEventListener("click", () => {
+const skip = document.querySelector(".skip");
+const speedText = document.querySelector(".speed-multiplier");
+
+const speeds = [16, 8, 4, 3, 2, 1];
+let stage = 0;
+
+// go to the next stage,
+function upTheStage() {
   stage++;
 
   // to delete on real game
@@ -99,12 +87,18 @@ skip.addEventListener("click", () => {
 
   speedText.innerText = `${speeds[stage]}x`;
 
-  audio1.currentTime = 0;
+  // stop music and reset everything
   audio1.pause();
   playing = false;
+  audio1.currentTime = 0;
+  play.innerText = "Play";
 
   start = undefined;
   requestAnimationFrame(progressBarStep);
+}
+
+skip.addEventListener("click", () => {
+  upTheStage();
 });
 
 // back and forward animations + implementation
@@ -202,12 +196,28 @@ const enter = document.querySelector(".enter");
 
 enter.addEventListener("click", () => {
   const guess = search.value;
+  search.value = "";
   if (guess.localeCompare(correctSong) === 0) {
     console.log("wow!");
   } else {
+    upTheStage();
     console.log("you suck!");
   }
-  console.log(`${guess} and ${correctSong}`);
+});
+
+const guessesBox = document.querySelector(".guesses");
+
+let guesses = ["", "", "", "", "", ""];
+
+guesses.forEach((text) => {
+  const tryBox = document.createElement("div");
+  tryBox.className = "try-box";
+
+  const p = document.createElement("p");
+  p.innerText = text;
+
+  tryBox.append(p);
+  guessesBox.append(tryBox);
 });
 
 /* tool for getting mp3 tags from all mp3 files

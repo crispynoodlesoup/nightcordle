@@ -102,11 +102,15 @@ main {
   padding: 24px 0;
   display: grid;
   justify-items: center;
+  overflow: hidden;
+  height: 100%;
+  align-content: baseline;
 }
 
 .guesses {
   display: flex;
   flex-direction: column;
+  height: fit-content;
   gap: 12px;
   justify-content: center;
   width: min(512px, 100vw);
@@ -255,7 +259,10 @@ main {
   -webkit-user-drag: none;
 
   transition: all 0.4s;
-  z-index: 0;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .search-suggestions li:hover {
